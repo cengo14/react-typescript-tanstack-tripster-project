@@ -1,50 +1,90 @@
-# React + TypeScript + Vite
+# Otel Rezervasyon Sistemi
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bu proje, kullanıcıların otel bilgilerini görüntüleyebileceği, rezervasyon yapabileceği ve otel ekleyebileceği bir web uygulamasıdır. **React** ve **TypeScript** ile geliştirilmiş olup, veriler **data.json**'da saklanmaktadır. Frontend tarafında **TanStack Query**, **Formik** ve **Tailwind CSS** kullanılmıştır.
 
-Currently, two official plugins are available:
+## Özellikler
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Otel Ekleme:** Form alanı kullanılarak yeni otel bilgisi eklenebilir.
+- **Listeleme:** Otellerin listelenmesi ve detay bilgilerinin görüntülenmesi.
+- **Filtreleme:**
+  - **İsme Göre:** Kullanıcılar otelleri isimlerine göre filtreleyebilir.
+  - **Konuma Göre:** İstenilen konumda bulunan oteller listelenebilir.
+- **Sıralama:**
+  - Fiyatına göre artan veya azalan sıralama.
+  - Alfabetik olarak (A-Z veya Z-A) sıralama.
+- **Form Doğrulama:** Formik ile rezervasyon ve otel ekleme formları için doğrulama.
+- **Modern Tasarım:** Kullanıcı dostu ve responsive tasarım için Tailwind CSS kullanımı.
+- **Gerçek Zamanlı Veri Yönetimi:** TanStack Query sayesinde hızlı ve kesintisiz veri yönetimi.
 
-## Expanding the ESLint configuration
+## Kullanılan Teknolojiler
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Frontend:
 
-- Configure the top-level `parserOptions` property like this:
+- **React**
+- **TypeScript**
+- **TanStack Query**
+- **Formik**
+- **Tailwind CSS**
+- **Axios**
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### Backend:
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+- **Node.js**
+- **Express.js**
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Kurulum ve Çalıştırma
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+### Backend
+
+1. Proje dizinine gidin:
+   ```bash
+   cd backend
+   ```
+2. Gerekli bağımlılıkları yükleyin:
+   ```bash
+   npm install
+   ```
+3. Sunucuyu başlatın:
+   ```bash
+   npm start
+   ```
+
+### Frontend
+
+1. Proje dizinine gidin:
+   ```bash
+   cd frontend
+   ```
+2. Gerekli bağımlılıkları yükleyin:
+   ```bash
+   npm install
+   ```
+3. Uygulamayı başlatın:
+   ```bash
+   npm run dev
+   ```
+
+## Ekran Görüntüleri
+
+![Uygulama Görünümü](./screenshots/ss.gif)
+
+## Katkıda Bulunma
+
+1. Bu projeyi forklayın.
+2. Yeni bir dal oluşturun:
+   ```bash
+   git checkout -b yeni-ozellik
+   ```
+3. Değişikliklerinizi commit edin:
+   ```bash
+   git commit -m "Yeni bir özellik eklendi"
+   ```
+4. Dalınızı push edin:
+   ```bash
+   git push origin yeni-ozellik
+   ```
+5. Pull Request oluşturun.
+
+## Lisans
+
+Bu proje MIT Lisansı ile lisanslanmıştır. Daha fazla bilgi için `LICENSE` dosyasına bakabilirsiniz.
